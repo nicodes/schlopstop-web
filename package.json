@@ -16,6 +16,7 @@
     "@fontsource/montserrat": "^5.0.16",
     "astro": "^4.0.8",
     "sass": "^1.69.6",
+    "sharp": "^0.33.1",
     "typescript": "^5.3.3"
   }
 }
