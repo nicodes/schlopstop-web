@@ -1,4 +1,6 @@
 .menuTitle {
+  margin-top: var(--thick);
+
   & > :first-child {
     /* h2 */
     color: var(--red);
