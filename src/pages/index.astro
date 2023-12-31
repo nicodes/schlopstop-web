@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MenuTitle from "../components/menuTitle/MenuTitle.astro";
 import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.astro";
 import MenuItem from "../components/menuItem/MenuItem.astro";
 import { Image } from "astro:assets";
@@ -14,13 +15,10 @@ import styles from "./index.module.scss";
 
   <p class={styles.description}>
     Building community through growing, preparing, and serving nourishment for
-    all
+    all.
   </p>
 
-  <div class={styles.menuTitle}>
-    <h2>MENU</h2>
-    <div></div>
-  </div>
+  <MenuTitle />
 
   <MenuSectionTitle title="PLATES" />
 
