@@ -8,9 +8,7 @@
     color: var(--red);
     font-family: Cardo;
     font-size: 30px;
-    font-style: normal;
     font-weight: 700;
-    line-height: normal;
   }
 
   & > :last-child {
@@ -25,12 +23,10 @@
   color: #000;
 
   /* h2 */
-  font-family: Cardo;
+  font-family: cardo;
   font-size: 30px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 .menuItem {
@@ -38,11 +34,12 @@
 
   & > :first-child {
     display: flex;
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+
+    p {
+      font-family: montserrat;
+      font-size: 24px;
+      font-weight: 700;
+    }
 
     & > :first-child {
       margin-right: auto;
@@ -57,8 +54,6 @@
     /* body */
     font-family: Lato;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 133.333% */
   }
 }

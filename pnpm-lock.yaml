@@ -8,6 +8,15 @@ dependencies:
   '@astrojs/check':
     specifier: ^0.3.4
     version: 0.3.4(typescript@5.3.3)
+  '@fontsource/cardo':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/lato':
+    specifier: ^5.0.18
+    version: 5.0.18
+  '@fontsource/montserrat':
+    specifier: ^5.0.16
+    version: 5.0.16
   astro:
     specifier: ^4.0.8
     version: 4.0.8(sass@1.69.6)(typescript@5.3.3)
@@ -587,6 +596,18 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/cardo@5.0.8:
+    resolution: {integrity: sha512-QtSXEHIPwBRE5Bkd8pf2TlyUGEVLOHmjFhamzI44x9GjcqyCuqRX1q9r2jq/7atf+VFBiAYG5biFonTrwUlbnQ==}
+    dev: false
+
+  /@fontsource/lato@5.0.18:
+    resolution: {integrity: sha512-lJa0f4MPXtHsZsLz37wo7d4m5odfOdwCNRg0IjV06ri/fIPypJLEuUB12oWCJ38DDD/XhKVSQPo8BWV8CRBhzQ==}
+    dev: false
+
+  /@fontsource/montserrat@5.0.16:
+    resolution: {integrity: sha512-g27g1cvkyVm74QM0HKOCnI4iifMqf/3cSJYedjbjtW/Ygb271qfDz5gGMJCl9MinD4nimDdENsU3K1vGR50S2Q==}
+    dev: false
 
   /@img/sharp-darwin-arm64@0.33.1:
     resolution: {integrity: sha512-esr2BZ1x0bo+wl7Gx2hjssYhjrhUsD88VQulI0FrG8/otRQUOxLWHMBd1Y1qo2Gfg2KUvXNpT0ASnV9BzJCexw==}
