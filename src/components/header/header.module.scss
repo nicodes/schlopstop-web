@@ -1,12 +1,11 @@
 .header {
-  width: 100vw;
-  background-color: lightblue;
+  background-color: var(--red);
+  padding: var(--thick);
 }
 
 .nav {
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: var(--thick);
 
   display: flex;
   align-items: center;
