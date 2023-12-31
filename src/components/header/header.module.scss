@@ -1,6 +1,8 @@
+$desktopBreak: 800px;
+
 .header {
   background-color: var(--red);
-  padding: var(--thick);
+  padding: var(--thin);
 }
 
 .nav {
@@ -12,13 +14,32 @@
   gap: var(--thick);
 
   overflow: hidden; // TODO fix header overflow
+  color: white;
 
   h1 {
     margin-right: auto;
 
-    color: white;
-    font-family: High Tide - Demo; // TODO not installed
-    font-size: 50px;
+    font-family: "Lobster", sans-serif;
+    font-size: 30px;
     font-weight: 400;
+  }
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--fine);
+
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: $desktopBreak) {
+    p {
+      display: none;
+    }
   }
 }

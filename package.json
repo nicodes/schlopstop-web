@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.3.4",
     "@fontsource/cardo": "^5.0.8",
     "@fontsource/lato": "^5.0.18",
+    "@fontsource/lobster": "^5.0.18",
     "@fontsource/montserrat": "^5.0.16",
     "astro": "^4.0.8",
     "sass": "^1.69.6",
