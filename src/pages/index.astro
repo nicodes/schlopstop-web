@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.astro";
 import MenuItem from "../components/menuItem/MenuItem.astro";
 import { Image } from "astro:assets";
 import schlopStopImg from "../assets/schlop-stop.png"; // Image is 1600x900
@@ -21,7 +22,7 @@ import styles from "./index.module.scss";
     <div></div>
   </div>
 
-  <p class={styles.menuSubsectionTitle}>PLATES</p>
+  <MenuSectionTitle title="PLATES" />
 
   <MenuItem
     title="Falafel Plate"
@@ -50,7 +51,7 @@ import styles from "./index.module.scss";
     price="**"
   />
 
-  <p class={styles.menuSubsectionTitle}>SANDWICHES</p>
+  <MenuSectionTitle title="SANDWICHES" />
 
   <MenuItem
     title="Falafel Wrap"
@@ -74,7 +75,7 @@ import styles from "./index.module.scss";
     price="$13"
   />
 
-  <p class={styles.menuSubsectionTitle}>SIDES</p>
+  <MenuSectionTitle title="SIDES" />
 
   <MenuItem title="Farm Fries" descriptions={["French fries"]} price="$5" />
 
