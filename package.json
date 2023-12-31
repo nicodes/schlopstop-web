@@ -1,5 +1,5 @@
 {
-  "name": "schlopstop",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "astro": "^3.5.5",
-    "typescript": "^5.2.2"
+    "@astrojs/check": "^0.3.4",
+    "@fontsource/cardo": "^5.0.8",
+    "@fontsource/lato": "^5.0.18",
+    "@fontsource/lobster": "^5.0.18",
+    "@fontsource/montserrat": "^5.0.16",
+    "astro": "^4.0.8",
+    "sass": "^1.69.6",
+    "sharp": "^0.33.1",
+    "typescript": "^5.3.3"
   }
 }

@@ -1,0 +1,56 @@
+:root {
+  --red: #c24040;
+
+  --header-max-width: 1200px;
+  --content-max-width: 800px;
+  --border-radius: 2px;
+
+  --fine: 8px;
+  --thin: 12px;
+  --thick: 24px;
+
+  --font-size-lg: 2rem;
+  --font-size-md: 1.6rem;
+  --font-size-sm: 1.2rem;
+  --font-size-xs: 0.8rem;
+}
+
+* {
+  // all: unset;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  // box-sizing: border-box;
+
+  font-size: var(--font-size-sm);
+  font-family: NeutraText-Book;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  overflow: scroll;
+  padding: var(--thin);
+}
+
+// scroll container
+main > div {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--thick);
+}
+
+// main > * {
+//   max-width: var(--content-max-width);
+// }

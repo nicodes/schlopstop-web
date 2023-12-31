@@ -1,0 +1,19 @@
+---
+import styles from "./menuItem.module.scss";
+
+interface Props {
+  title: string;
+  descriptions: string[];
+  price?: string;
+}
+
+const { title, descriptions, price } = Astro.props;
+---
+
+<div class={styles.menuItem}>
+  <div>
+    <p>{title}</p>
+    {price && <p>{price}</p>}
+  </div>
+  {descriptions.map((e) => <p>{e}</p>)}
+</div>
