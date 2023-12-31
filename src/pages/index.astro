@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MenuItem from "../components/menuItem/MenuItem.astro";
 import { Image } from "astro:assets";
 import schlopStopImg from "../assets/schlop-stop.png"; // Image is 1600x900
 import styles from "./index.module.scss";
@@ -20,185 +21,98 @@ import styles from "./index.module.scss";
     <div></div>
   </div>
 
-  <p class={styles.menuSubsectionTitle}>Plates</p>
+  <p class={styles.menuSubsectionTitle}>PLATES</p>
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Falafel Plate"
+    descriptions={[
+      "Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini",
+    ]}
+    price="$13"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Falafel Wrap"
+    descriptions={[
+      "Goat Cheese Mashed Potatoes, Roasted Veggies, Grilled Chicken",
+    ]}
+    price="$15"
+  />
 
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
+  <MenuItem
+    title="Custom Plates"
+    descriptions={["Choose 2 sides + 1 salad", "Choose 3 sides + 1 salad"]}
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Special Plates"
+    descriptions={["Weekly special from the farm"]}
+    price="**"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <p class={styles.menuSubsectionTitle}>SANDWICHES</p>
 
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
+  <MenuItem
+    title="Falafel Wrap"
+    descriptions={[
+      "4 Falafel balls with lettuce, tomato, onion, and tahini in a pita wrap (make it spicy tahini)",
+    ]}
+    price="$10"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Chicken Sandwich"
+    descriptions={[
+      "Grilled Chicken, garlic aioli, lettuce, tomato, pickled onion on brioche",
+    ]}
+    price="$12"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Special Sandwich"
+    descriptions={["Weekly special from the farm"]}
+    price="$13"
+  />
 
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
+  <p class={styles.menuSubsectionTitle}>SIDES</p>
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem title="Farm Fries" descriptions={["French fries"]} price="$5" />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Fried Chicken Thighs"
+    descriptions={["5 pieces"]}
+    price="$8"
+  />
 
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
+  <MenuItem
+    title="Goat Cheese Mashed Potatoes"
+    descriptions={[
+      "Mashed Potatoes mixed with goat cheese, butter, garlic, and leak",
+    ]}
+    price="$5"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Roasted Veggies"
+    descriptions={["Roasted Seasonal Vegetables"]}
+    price="$4"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Falafel Balls"
+    descriptions={["4 balls with a side of tahini"]}
+    price="$7"
+  />
 
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
+  <MenuItem
+    title="Hummus"
+    descriptions={["Small bowl of hummus served with pita"]}
+    price="$6"
+  />
 
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
-
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
-
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
-
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
-
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
-
-  <p class={styles.menuSubsectionTitle}>Sandwiches</p>
-
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
-
-  <div class={styles.menuItem}>
-    <div>
-      <p>Falafel Plate</p>
-      <p>$13</p>
-    </div>
-    <p>
-      Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini
-    </p>
-  </div>
+  <MenuItem
+    title="Special Sides"
+    descriptions={["Weekly specials from the farm"]}
+    price="**"
+  />
 </Layout>

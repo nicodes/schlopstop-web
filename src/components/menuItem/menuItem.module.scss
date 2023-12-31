@@ -1,0 +1,26 @@
+.menuItem {
+  width: 100%;
+
+  // title and price
+  & > :first-child {
+    display: flex;
+
+    p {
+      font-family: montserrat;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    & > :first-child {
+      margin-right: auto;
+    }
+  }
+
+  // descriptions
+  & > :not(:first-child) {
+    margin-top: var(--thin);
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

@@ -28,32 +28,3 @@
   font-weight: 700;
   text-decoration: underline;
 }
-
-.menuItem {
-  width: 100%;
-
-  & > :first-child {
-    display: flex;
-
-    p {
-      font-family: montserrat;
-      font-size: 24px;
-      font-weight: 700;
-    }
-
-    & > :first-child {
-      margin-right: auto;
-    }
-  }
-
-  & > :last-child {
-    color: #000;
-    font-feature-settings: "clig" off, "liga" off;
-    margin-top: var(--thin);
-
-    /* body */
-    font-family: Lato;
-    font-size: 18px;
-    font-weight: 400;
-  }
-}
