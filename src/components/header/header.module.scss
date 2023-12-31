@@ -11,6 +11,8 @@
   align-items: center;
   gap: var(--thick);
 
+  overflow: hidden; // TODO fix header overflow
+
   h1 {
     margin-right: auto;
 
