@@ -1,9 +1,10 @@
 ---
-// import { Image } from "astro:assets";
-// import schlopStopImg from "../../assets/schlop-stop.png"; // Image is 1600x900
+import { Image } from "astro:assets";
+import schlopStopImg from "../../assets/schlop-stop.png"; // Image is 1600x900
 import styles from "./pageLogo.module.scss";
 ---
 
-<p class={styles.title}>SCHLOP</p>
-<!-- <Image src={schlopStopImg} alt="'Schlop Stop Logo" /> -->
-<p class={styles.title}>STOP</p>
+<div class={styles.pageLogo}>
+  <p class={styles.title}>Schlop Stop</p>
+  <Image src={schlopStopImg} height={200} width={200} alt="'Schlop Stop Logo" />
+</div>

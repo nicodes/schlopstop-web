@@ -1,12 +1,14 @@
+.pageLogo {
+  margin-top: var(--thick);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title {
-  align-self: center;
   color: var(--red);
 
   font-family: "Lobster", sans-serif;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 400;
-}
-
-.image {
-  align-self: center;
 }

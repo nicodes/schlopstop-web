@@ -1,7 +1,8 @@
 :root {
   --red: #c24040;
 
-  --content-max-width: 1200px;
+  --header-max-width: 1200px;
+  --content-max-width: 800px;
   --border-radius: 2px;
 
   --fine: 8px;
@@ -38,7 +39,7 @@ body {
 main {
   flex: 1;
   overflow: scroll;
-  padding: var(--thick);
+  padding: var(--thin);
 }
 
 // scroll container

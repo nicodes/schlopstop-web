@@ -3,17 +3,17 @@ $desktopBreak: 800px;
 .header {
   background-color: var(--red);
   padding: var(--thin);
+  box-shadow: 0px 2px 2px lightgrey; // TODO make this better
 }
 
 .nav {
-  max-width: var(--content-max-width);
+  max-width: var(--header-max-width);
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   gap: var(--thick);
 
-  overflow: hidden; // TODO fix header overflow
   color: white;
 
   h1 {
@@ -35,6 +35,13 @@ $desktopBreak: 800px;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  p {
+    /* body */
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
   }
 
   @media screen and (max-width: $desktopBreak) {
