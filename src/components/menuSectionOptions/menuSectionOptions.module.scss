@@ -1,0 +1,20 @@
+.menuSectionOptions {
+  & > div {
+    display: flex;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:first-child {
+      margin-bottom: var(--thin);
+    }
+
+    & > :first-child {
+      margin-right: auto;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

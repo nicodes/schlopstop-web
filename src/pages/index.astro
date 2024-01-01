@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import PageLogo from "../components/pageLogo/PageLogo.astro";
 import MenuTitle from "../components/menuTitle/MenuTitle.astro";
 import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.astro";
+import MenuSectionOptions from "../components/menuSectionOptions/MenuSectionOptions.astro";
+
 import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
 ---
@@ -69,6 +71,24 @@ import styles from "./index.module.scss";
     descriptions={["Weekly special from the farm"]}
     price="$13"
   />
+
+  <MenuSectionTitle title="SALADS" />
+
+  <MenuItem
+    title="Farm Salad"
+    descriptions={["Salad Mix, Seasonal veggies, choose of dressing"]}
+    price="$8"
+  />
+
+  <MenuItem
+    title="Garlic Crunch Salad"
+    descriptions={[
+      "Salad Mix, Seasonal veggies, granola, dried fruit, garlic olive oil, topped with goat cheese",
+    ]}
+    price="$10"
+  />
+
+  <MenuSectionOptions />
 
   <MenuSectionTitle title="SIDES" />
 
