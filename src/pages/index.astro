@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageLogo from "../components/pageLogo/PageLogo.astro";
-import MenuTitle from "../components/menuTitle/MenuTitle.astro";
+// import MenuTitle from "../components/menuTitle/MenuTitle.astro";
 import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.astro";
 import MenuSectionOptions from "../components/menuSectionOptions/MenuSectionOptions.astro";
 
@@ -17,9 +17,20 @@ import styles from "./index.module.scss";
     all.
   </p>
 
-  <MenuTitle title="MENU" />
+  <!-- <MenuTitle title="MENU" /> -->
+  <p
+    style={{
+      textAlign: "center ",
+      fontSize: "36px",
+      // fontFamily: "lobster",
+      color: "#c24040",
+      marginTop: "24px",
+    }}
+  >
+    MENU
+  </p>
 
-  <MenuSectionTitle title="PLATES" />
+  <MenuSectionTitle title="Plates" />
 
   <MenuItem
     title="Falafel Plate"
@@ -44,7 +55,7 @@ import styles from "./index.module.scss";
     price="**"
   />
 
-  <MenuSectionTitle title="SANDWICHES" />
+  <MenuSectionTitle title="Sandwiches" />
 
   <MenuItem
     title="Falafel Wrap"
@@ -64,7 +75,7 @@ import styles from "./index.module.scss";
     price="$13"
   />
 
-  <MenuSectionTitle title="SALADS" />
+  <MenuSectionTitle title="Salads" />
 
   <MenuItem
     title="Farm Salad"
@@ -80,7 +91,7 @@ import styles from "./index.module.scss";
 
   <MenuSectionOptions />
 
-  <MenuSectionTitle title="SIDES" />
+  <MenuSectionTitle title="Sides" />
 
   <MenuItem title="Farm Fries" description="French fries" price="$5" />
 
