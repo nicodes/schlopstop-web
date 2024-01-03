@@ -1,0 +1,26 @@
+.menuSectionOptions {
+  & > div {
+    display: flex;
+    // font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:first-child {
+      margin-bottom: var(--thin);
+    }
+
+    & > :first-child {
+      margin-right: auto;
+    }
+
+    span {
+      font-weight: 900;
+      text-decoration: underline;
+    }
+  }
+}
+
+.price {
+  // font-family: montserrat;
+  font-weight: 700;
+}

@@ -3,12 +3,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  img {
+    margin-top: var(--thick);
+  }
 }
 
 .title {
   color: var(--red);
 
-  font-family: "Lobster", sans-serif;
+  font-family: lobster;
   font-size: 50px;
   font-weight: 400;
 }
