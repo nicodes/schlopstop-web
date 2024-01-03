@@ -22,6 +22,8 @@ $desktopBreak: 800px;
     font-family: lobster;
     font-size: 30px;
     font-weight: 400;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000; /* Outline effect */
   }
 }
 
