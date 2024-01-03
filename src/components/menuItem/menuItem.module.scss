@@ -4,6 +4,7 @@
   // title and price
   & > :first-child {
     display: flex;
+    gap: var(--thick);
 
     p {
       // font-family: montserrat;
