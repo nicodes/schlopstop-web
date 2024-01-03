@@ -28,7 +28,7 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%; // can't be 100vh because of mobile browser UI
 }
 
 body {
