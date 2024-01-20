@@ -33,7 +33,7 @@ $desktopBreak: 800px;
   gap: var(--fine);
 
   text-decoration: none;
-  color: white;
+  color: var(--white);
 
   &:hover {
     text-decoration: underline;
