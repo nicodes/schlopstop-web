@@ -9,7 +9,7 @@
     p {
       // font-family: montserrat;
       font-size: 24px;
-      font-weight: 700;
+      font-weight: bold;
     }
 
     & > :first-child {
@@ -20,8 +20,6 @@
   // descriptions
   & > :not(:first-child) {
     margin-top: var(--space-md);
-    // font-family: Lato;
     font-size: 18px;
-    font-weight: 400;
   }
 }

@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import PageLogo from "../components/pageLogo/PageLogo.astro";
 import Circle from "../components/circle/Circle.astro";
 
+import schlopStopImg from "../assets/schlop-logo.png";
 import phoneImg from "../assets/phone.svg";
 import emailImg from "../assets/email.svg";
 import instagramImg from "../assets/instagram-256.png";
@@ -13,7 +14,8 @@ import styles from "./index.module.scss";
 ---
 
 <Layout title="Schlop Stop" class={styles.layout}>
-  <PageLogo />
+  <p class={styles.title}>Schlop Stop</p>
+  <Image src={schlopStopImg} height={200} width={200} alt="'Schlop Stop Logo" />
 
   <!-- <p class={styles.description}>
     Building community through growing, preparing, and serving nourishment for
@@ -35,11 +37,11 @@ import styles from "./index.module.scss";
     </a>
   </div>
 
-  <h2>Contact Us</h2>
+  <h2 class={styles.contactTitle}>Contact Us</h2>
 
-  <div class={styles.contact}>
+  <div class={styles.contactContainer}>
     <a href="https://www.instagram.com/schlopstop/" class={styles.icon}>
-      <Circle>
+      <Circle border="3px solid var(--red)">
         <Image
           src={instagramImg}
           alt="instagram icon"
@@ -50,7 +52,7 @@ import styles from "./index.module.scss";
     </a>
 
     <a href="mailto:contact@schlopstop.com" class={styles.icon}>
-      <Circle>
+      <Circle border="3px solid var(--red)">
         <Image
           src={emailImg}
           alt="instagram icon"
@@ -61,7 +63,7 @@ import styles from "./index.module.scss";
     </a>
 
     <a href="tel:215-756-1916" class={styles.icon}>
-      <Circle>
+      <Circle border="3px solid var(--red)">
         <Image
           src={phoneImg}
           alt="instagram icon"

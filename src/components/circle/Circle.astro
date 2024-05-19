@@ -4,11 +4,12 @@ import styles from "./circle.module.scss";
 interface Props {
   width?: string;
   height?: string;
+  border?: string;
 }
 
-const { width = "44px", height = "44px" } = Astro.props;
+const { width = "44px", height = "44px", border } = Astro.props;
 ---
 
-<div class={styles.circle} style={{ width, height }}>
+<div class={styles.circle} style={{ width, height, border }}>
   <slot />
 </div>
