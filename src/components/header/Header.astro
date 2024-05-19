@@ -1,4 +1,6 @@
 ---
+import cn from "classnames";
+
 import { Image } from "astro:assets";
 import Circle from "../circle/Circle.astro";
 
@@ -6,24 +8,64 @@ import phoneImg from "../../assets/phone.svg";
 import emailImg from "../../assets/email.svg";
 
 import styles from "./header.module.scss";
+
+export const pages = [
+  {
+    path: "/menu",
+    title: "Menu",
+  },
+  {
+    path: "/about",
+    title: "About",
+  },
+  {
+    path: "/catering",
+    title: "Catering",
+  },
+  {
+    path: "/sunburnsfarm",
+    title: "Sunburns Farm",
+  },
+  {
+    path: "/contact",
+    title: "Contact",
+  },
+];
+
+const { pathname } = new URL(Astro.request.url);
 ---
 
 <header class={styles.header}>
   <nav class={styles.nav}>
-    <h1>Schlop Stop</h1>
+    <h1 class={pathname === "/" ? `${styles.logo} underlined` : styles.logo}>
+      <a href="/">Schlop Stop</a>
+    </h1>
 
-    <a href="mailto:contact@schlopstop.com" class={styles.navItem}>
+    {
+      pages.map(({ path, title }) => (
+        <p class={styles.link}>
+          <a
+            href={path}
+            class={cn(styles.link, { [styles.active]: path === pathname })}
+          >
+            {title}
+          </a>
+        </p>
+      ))
+    }
+
+    <a href="mailto:contact@schlopstop.com" class={styles.icon}>
       <Circle>
         <Image src={emailImg} alt="email icon" />
       </Circle>
-      <p>contact@schlopstop.com</p>
+      <!-- <p>contact@schlopstop.com</p> -->
     </a>
 
-    <a href="tel:215-756-1916" class={styles.navItem}>
+    <a href="tel:215-756-1916" class={styles.icon}>
       <Circle>
         <Image src={phoneImg} alt="phone icon" />
       </Circle>
-      <p>215-756-1916</p>
+      <!-- <p>215-756-1916</p> -->
     </a>
   </nav>
 </header>

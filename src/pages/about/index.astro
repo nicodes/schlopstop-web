@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ipsum } from "../../utils/ipsum";
+import styles from "./about.module.scss";
+---
+
+<Layout title="About Us">
+  <h1>About Us</h1>
+
+  <p>
+    {ipsum()}
+  </p>
+
+  <div
+    style="display: flex; justify-content: center; align-items: center; gap: 22px"
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s"
+    />
+  </div>
+
+  <p>
+    {ipsum()}
+  </p>
+
+  <div style="display: flex; gap: 22px">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s"
+      style="max-width: 400px;"
+    />
+
+    <p>
+      {ipsum()}
+    </p>
+  </div>
+
+  <div style="display: flex; gap: 22px">
+    <p>
+      {ipsum()}
+    </p>
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s"
+      style="max-width: 400px;"
+    />
+  </div>
+
+  <div style="display: flex; gap: 22px">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s"
+      style="max-width: 400px;"
+    />
+
+    <p>
+      {ipsum()}
+    </p>
+  </div>
+
+  <p>
+    {ipsum()}
+  </p>
+</Layout>

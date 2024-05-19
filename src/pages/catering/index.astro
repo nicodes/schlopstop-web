@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { ipsum } from "../../utils/ipsum";
+import styles from "./catering.module.scss";
+---
+
+<Layout title="About Us">
+  <h1>Catering</h1>
+
+  <h1>sunburnsfarm</h1>
+
+  <p>
+    {ipsum(40)}
+  </p>
+
+  <div
+    style="display: flex; justify-content: center; align-items: center; gap: 22px"
+  >
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s"
+    />
+  </div>
+
+  <p>
+    {ipsum(70)}
+  </p>
+
+  <p>
+    {ipsum()}
+  </p>
+
+  <p>
+    {ipsum(70)}
+  </p>
+</Layout>

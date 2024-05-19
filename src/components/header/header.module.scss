@@ -16,39 +16,34 @@ $desktopBreak: 800px;
 
   color: white;
 
-  h1 {
-    margin-right: auto;
-
-    font-family: lobster;
-    font-size: 30px;
-    font-weight: 400;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-      1px 1px 0 #000; /* Outline effect */
+  & > * {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
-.navItem {
-  display: flex;
-  align-items: center;
-  gap: var(--fine);
+.logo {
+  margin-right: auto;
 
-  text-decoration: none;
-  color: var(--white);
+  font-family: lobster;
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Outline effect */
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.link {
+  font-size: 18px;
+  font-weight: 400;
 
-  p {
-    /* body */
-    // font-family: Lato;
-    font-size: 18px;
-    font-weight: 400;
-  }
-
+  // Hide on mobile
   @media screen and (max-width: $desktopBreak) {
-    p {
-      display: none;
-    }
+    display: none;
   }
+}
+
+.active {
+  text-decoration: underline;
 }
