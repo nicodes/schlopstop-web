@@ -11,10 +11,11 @@ import styles from "./layout.module.scss";
 
 interface Props {
   title: string;
+  heading?: string;
   class?: string;
 }
 
-const { title, class: className } = Astro.props;
+const { title, heading, class: className } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ const { title, class: className } = Astro.props;
   <body>
     <Header />
     <main class={cn(styles.main, className)}>
+      {heading && <h1 class={styles.heading}>{heading}</h1>}
       <slot />
     </main>
   </body>

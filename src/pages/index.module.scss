@@ -1,3 +1,5 @@
+$desktopBreak: 800px;
+
 .title {
   color: var(--red);
   font-family: lobster;
@@ -18,6 +20,10 @@
 
   width: 100%;
   margin: var(--space-xl) 0;
+
+  @media screen and (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gridElement {
