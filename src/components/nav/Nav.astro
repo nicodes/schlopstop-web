@@ -1,0 +1,26 @@
+---
+import { navId, navClickCatcherId } from "./nav";
+import styles from "./nav.module.scss";
+---
+
+<div id={navClickCatcherId} class={styles.clickCatcher}></div>
+
+<nav id={navId} class={styles.nav}>
+  <a
+    href="https://drive.google.com/file/d/1lQnXic4f19HyEiq9rXZHFfM-LJ6nqiyg/preview"
+  >
+    Menu
+  </a>
+
+  <a href="/">Home</a>
+  <a href="/catering">Catering</a>
+  <a href="/about">About</a>
+  <a href="https://www.instagram.com/schlopstop/">Instagram</a>
+  <a href="mailto:contact@schlopstop.com">Email</a>
+  <a href="tel:215-756-1916">Phone</a>
+</nav>
+
+<script>
+  import { getNavClickCatcher, navToggle } from "./nav";
+  getNavClickCatcher()?.addEventListener("click", () => navToggle("close"));
+</script>

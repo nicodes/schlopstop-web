@@ -1,0 +1,27 @@
+.nav {
+  position: fixed;
+  left: -100%;
+  transition: left 0.5s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+
+  color: var(--black);
+  background-color: var(--white);
+  border: 2px solid var(--red);
+  border-top: none;
+  border-left: none;
+  border-bottom-right-radius: var(--border-radius);
+
+  &.navOpen {
+    left: 0;
+  }
+}
+
+.clickCatcher {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}

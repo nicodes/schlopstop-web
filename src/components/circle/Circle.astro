@@ -1,15 +1,59 @@
 ---
+import cn from "classnames";
 import styles from "./circle.module.scss";
 
-interface Props {
+type Props = {
+  id?: string;
   width?: string;
   height?: string;
   border?: string;
-}
+} & (
+  | {
+      anchor?: true;
+      href: string;
 
-const { width = "44px", height = "44px", border } = Astro.props;
+      button?: undefined;
+    }
+  | {
+      button?: true;
+
+      anchor?: undefined;
+      href?: undefined;
+    }
+);
+
+const {
+  anchor,
+  href,
+  button,
+  id,
+  width = "44px",
+  height = "44px",
+  border,
+} = Astro.props;
 ---
 
-<div class={styles.circle} style={{ width, height, border }}>
-  <slot />
-</div>
+{
+  anchor ? (
+    <a
+      id={id}
+      class={styles.circle}
+      style={{ width, height, border }}
+      href={href}
+    >
+      <slot />
+    </a>
+  ) : button ? (
+    <button
+      id={id}
+      class={cn(styles.circle, styles.button)}
+      style={{ width, height, border }}
+    >
+      <slot />
+    </button>
+  ) : (
+    <div id={id} class={styles.circle} style={{ width, height, border }}>
+      <slot />
+    </div>
+  )
+}

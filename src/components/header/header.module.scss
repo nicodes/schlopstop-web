@@ -46,13 +46,18 @@ $desktopBreak: 800px;
   }
 }
 
-.active {
-  text-decoration: underline;
+.navContainer {
+  button {
+    min-width: 44px;
+    min-height: 44px;
+
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
-.icon {
-  img {
-    height: 50%;
-    width: 50%;
-  }
+.relative {
+  position: relative;
 }

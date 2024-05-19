@@ -4,17 +4,23 @@ import cn from "classnames";
 import { Image } from "astro:assets";
 import Circle from "../circle/Circle.astro";
 
+import menuImg from "../../assets/menu-white-24.png";
 import instagramImg from "../../assets/instagram-white-24.png";
 import phoneImg from "../../assets/phone-white-24.png";
 import emailImg from "../../assets/email-white-24.png";
 
 import styles from "./header.module.scss";
+import { navButtonId } from "./header";
 
 const { pathname } = new URL(Astro.request.url);
 ---
 
 <header class={styles.header} transition:persist>
   <div class={styles.container}>
+    <Circle button id={navButtonId} border="3px solid var(--white)">
+      <Image src={menuImg} alt="menu icon" height={24} width={24} />
+    </Circle>
+
     <a
       href="/"
       class={pathname === "/" ? `${styles.logo} underlined` : styles.logo}
@@ -50,22 +56,31 @@ const { pathname } = new URL(Astro.request.url);
       Sunburns Farm
     </a>
 
-    <a href="https://www.instagram.com/schlopstop/" class={styles.icon}>
-      <Circle border="3px solid var(--white)">
-        <Image src={instagramImg} alt="instagram icon" />
-      </Circle>
-    </a>
+    <Circle
+      anchor
+      href="https://www.instagram.com/schlopstop/"
+      border="3px solid var(--white)"
+    >
+      <Image src={instagramImg} alt="instagram icon" height={24} width={24} />
+    </Circle>
 
-    <a href="mailto:contact@schlopstop.com" class={styles.icon}>
-      <Circle border="3px solid var(--white)">
-        <Image src={emailImg} alt="email icon" />
-      </Circle>
-    </a>
+    <Circle
+      anchor
+      href="mailto:contact@schlopstop.com"
+      border="3px solid var(--white)"
+    >
+      <Image src={emailImg} alt="email icon" height={24} width={24} />
+    </Circle>
 
-    <a href="tel:215-756-1916" class={styles.icon}>
-      <Circle border="3px solid var(--white)">
-        <Image src={phoneImg} alt="phone icon" />
-      </Circle>
-    </a>
+    <Circle anchor href="tel:215-756-1916" border="3px solid var(--white)">
+      <Image src={phoneImg} alt="phone icon" height={24} width={24} />
+    </Circle>
   </div>
 </header>
+
+<script>
+  import { getNavButton } from "./header";
+  import { navToggle } from "../nav/nav";
+
+  getNavButton()?.addEventListener("click", () => navToggle());
+</script>
