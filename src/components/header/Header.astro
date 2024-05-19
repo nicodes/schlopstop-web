@@ -4,30 +4,11 @@ import cn from "classnames";
 import { Image } from "astro:assets";
 import Circle from "../circle/Circle.astro";
 
+import instagramImg from "../../assets/instagram-white-24.png";
 import phoneImg from "../../assets/phone-white-24.png";
 import emailImg from "../../assets/email-white-24.png";
-import instagramImg from "../../assets/instagram-white-24.png";
 
 import styles from "./header.module.scss";
-
-export const pages = [
-  {
-    path: "https://drive.google.com/file/d/1lQnXic4f19HyEiq9rXZHFfM-LJ6nqiyg/preview",
-    title: "Menu",
-  },
-  {
-    path: "/catering",
-    title: "Catering",
-  },
-  {
-    path: "/about",
-    title: "About",
-  },
-  {
-    path: "/farm",
-    title: "Sunburns Farm",
-  },
-];
 
 const { pathname } = new URL(Astro.request.url);
 ---
@@ -41,16 +22,33 @@ const { pathname } = new URL(Astro.request.url);
       Schlop Stop
     </a>
 
-    {
-      pages.map(({ path, title }) => (
-        <a
-          href={path}
-          class={cn(styles.link, { [styles.active]: path === pathname })}
-        >
-          {title}
-        </a>
-      ))
-    }
+    <a
+      href="https://drive.google.com/file/d/1lQnXic4f19HyEiq9rXZHFfM-LJ6nqiyg/preview"
+      class={styles.link}
+    >
+      Menu
+    </a>
+
+    <a
+      href="/catering"
+      class={cn(styles.link, { [styles.active]: pathname === "/catering" })}
+    >
+      Catering
+    </a>
+
+    <a
+      href="/about"
+      class={cn(styles.link, { [styles.active]: pathname === "/about" })}
+    >
+      About
+    </a>
+
+    <a
+      href="/farm"
+      class={cn(styles.link, { [styles.active]: pathname === "/farm" })}
+    >
+      Sunburns Farm
+    </a>
 
     <a href="https://www.instagram.com/schlopstop/" class={styles.icon}>
       <Circle border="3px solid var(--white)">
