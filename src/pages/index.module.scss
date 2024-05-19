@@ -6,3 +6,29 @@
   font-size: 22px;
   font-weight: 400;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+
+.gridElement {
+  height: 200px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4cg5UqHlZ0Ow5931bBzB-dAwqv7sieLHYf3dG4xYQLA&s);
+  background-size: cover;
+  background-position: center;
+
+  p {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
