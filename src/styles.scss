@@ -5,48 +5,40 @@
   --wheat: #f5ebd8;
 
   --header-max-width: 1200px;
+  --header-height: 60px;
   --content-max-width: 800px;
+  --desktop-break: 900px;
+
+  --font-xl: 3rem;
+  --font-lg: 2.2rem;
+  --font-md: 1.6rem;
+  --font-sm: 1.2rem;
+  --font-xs: 0.8rem;
+
+  // fibonacci
+  --space-xs: 5px;
+  --space-sm: 8px;
+  --space-md: 13px;
+  --space-lg: 21px;
+  --space-xl: 34px;
+  --space-xxl: 55px;
+
   --border-radius: 2px;
-
-  --fine: 8px;
-  --thin: 12px;
-  --thick: 24px;
-
-  --font-size-lg: 2rem;
-  --font-size-md: 1.6rem;
-  --font-size-sm: 1.2rem;
-  --font-size-xs: 0.8rem;
 }
 
-html,
-body {
-  height: 100%; // can't be 100vh because of mobile browser UI
+* {
+  box-sizing: border-box;
+}
+
+html {
   background-color: var(--wheat);
+  color: var(--black);
+  font-size: var(--font-sm);
+  font-family: lato;
 }
 
 body {
-  font-size: var(--font-size-sm);
-  font-family: lato;
   margin: 0;
-
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  overflow: scroll;
-  padding: var(--thin);
-}
-
-// scroll container
-main > div {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-  margin-bottom: 100px; // extra margin at bottom for styling
-  display: flex;
-  flex-direction: column;
-  gap: var(--thick);
 }
 
 p,
@@ -63,7 +55,3 @@ a {
   text-decoration: inherit;
   color: inherit;
 }
-
-// main > * {
-//   max-width: var(--content-max-width);
-// }

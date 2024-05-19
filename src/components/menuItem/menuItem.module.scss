@@ -4,7 +4,7 @@
   // title and price
   & > :first-child {
     display: flex;
-    gap: var(--thick);
+    gap: var(--space-lg);
 
     p {
       // font-family: montserrat;
@@ -19,7 +19,7 @@
 
   // descriptions
   & > :not(:first-child) {
-    margin-top: var(--thin);
+    margin-top: var(--space-md);
     // font-family: Lato;
     font-size: 18px;
     font-weight: 400;

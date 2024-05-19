@@ -33,7 +33,7 @@ const { pathname } = new URL(Astro.request.url);
 ---
 
 <header class={styles.header}>
-  <nav class={styles.nav}>
+  <div class={styles.nav}>
     <h1 class={pathname === "/" ? `${styles.logo} underlined` : styles.logo}>
       <a href="/">Schlop Stop</a>
     </h1>
@@ -70,5 +70,5 @@ const { pathname } = new URL(Astro.request.url);
       </Circle>
       <!-- <p>215-756-1916</p> -->
     </a>
-  </nav>
+  </div>
 </header>

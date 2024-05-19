@@ -1,5 +1,13 @@
+.layout {
+  // background-color: red;
+  // & > * {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+}
+
 .description {
-  margin-top: var(--thick);
+  margin-top: var(--space-lg);
   text-align: center;
 
   // font-family: Lato;
@@ -11,7 +19,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 16px;
+  gap: var(--space-md);
+
+  width: 100%;
+  margin: var(--space-xl) 0;
 }
 
 .gridElement {

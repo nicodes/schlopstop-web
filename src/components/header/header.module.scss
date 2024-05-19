@@ -1,18 +1,24 @@
 $desktopBreak: 800px;
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
   background-color: var(--red);
-  padding: var(--thin);
   box-shadow: 0px 2px 2px lightgrey; // TODO make this better
 }
 
 .nav {
+  height: var(--header-height);
   max-width: var(--header-max-width);
+
   margin: 0 auto;
+  padding: 0 var(--space-lg);
 
   display: flex;
   align-items: center;
-  gap: var(--thick);
+  gap: var(--space-lg);
 
   color: white;
 

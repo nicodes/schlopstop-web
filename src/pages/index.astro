@@ -3,15 +3,16 @@ import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
 import PageLogo from "../components/pageLogo/PageLogo.astro";
-import styles from "./index.module.scss";
 import Circle from "../components/circle/Circle.astro";
 
 import phoneImg from "../assets/phone.svg";
 import emailImg from "../assets/email.svg";
 import instagramImg from "../assets/instagram-256.png";
+
+import styles from "./index.module.scss";
 ---
 
-<Layout title="Schlop Stop">
+<Layout title="Schlop Stop" class={styles.layout}>
   <PageLogo />
 
   <!-- <p class={styles.description}>
