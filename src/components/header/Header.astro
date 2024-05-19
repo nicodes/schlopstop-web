@@ -13,7 +13,7 @@ import styles from "./header.module.scss";
 const { pathname } = new URL(Astro.request.url);
 ---
 
-<header class={styles.header}>
+<header class={styles.header} transition:persist>
   <div class={styles.container}>
     <a
       href="/"
