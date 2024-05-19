@@ -27,8 +27,20 @@
   background-position: center;
 
   p {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 4px;
+
     color: white;
     font-size: 32px;
     font-weight: 600;
+
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    p {
+      transform: scale(1.1);
+    }
   }
 }
