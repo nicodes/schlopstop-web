@@ -43,6 +43,7 @@ main {
 main > div {
   max-width: var(--content-max-width);
   margin: 0 auto;
+  margin-bottom: 100px; // extra margin at bottom for styling
   display: flex;
   flex-direction: column;
   gap: var(--thick);
