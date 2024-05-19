@@ -2,19 +2,19 @@
 import { Image } from "astro:assets";
 
 import Layout from "../layouts/Layout.astro";
-import PageLogo from "../components/pageLogo/PageLogo.astro";
 import Circle from "../components/circle/Circle.astro";
 
 import schlopStopImg from "../assets/schlop-logo.png";
-import phoneImg from "../assets/phone.svg";
-import emailImg from "../assets/email.svg";
-import instagramImg from "../assets/instagram-256.png";
+import phoneImg from "../assets/phone-red-24.png";
+import emailImg from "../assets/email-red-24.png";
+import instagramImg from "../assets/instagram-red-24.png";
 
 import styles from "./index.module.scss";
 ---
 
 <Layout title="Schlop Stop" class={styles.layout}>
-  <p class={styles.title}>Schlop Stop</p>
+  <h2 class={styles.title}>Schlop Stop</h2>
+
   <Image src={schlopStopImg} height={200} width={200} alt="'Schlop Stop Logo" />
 
   <!-- <p class={styles.description}>

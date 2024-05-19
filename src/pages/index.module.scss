@@ -4,12 +4,7 @@ $desktopBreak: 800px;
   color: var(--red);
   font-family: lobster;
   font-size: var(--font-xl);
-}
-
-.description {
-  margin-top: var(--space-lg);
-  text-align: center;
-  font-size: 22px;
+  font-weight: 400; // overwrite h2
 }
 
 .grid {
@@ -88,5 +83,9 @@ $desktopBreak: 800px;
       white-space: nowrap;
       text-align: center;
     }
+  }
+
+  svg {
+    fill: blue;
   }
 }
