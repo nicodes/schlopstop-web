@@ -5,6 +5,10 @@ import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.as
 import MenuSectionOptions from "../components/menuSectionOptions/MenuSectionOptions.astro";
 import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
+import { getMenu } from "../utils/menu";
+
+const menu = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM')
+console.log(menu)
 ---
 
 <Layout title="Schlop Stop">
