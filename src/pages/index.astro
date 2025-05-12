@@ -7,8 +7,8 @@ import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
 import { getMenu } from "../utils/menu";
 
-const menu = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM')
-console.log(menu)
+const {plates, sandwiches, salads, sides} = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM')
+console.log(plates, sandwiches, salads, sides)
 ---
 
 <Layout title="Schlop Stop">

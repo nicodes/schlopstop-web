@@ -5,7 +5,6 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: string;
 }
 
 function fetchCSV(url: string): Promise<string> {
@@ -34,7 +33,12 @@ function parseCSVByIndex(csv: string): any[] {
   });
 }
 
-export async function getMenu(sheetId: string): Promise<MenuItem[]> {
+export async function getMenu(sheetId: string): Promise<{
+  plates: MenuItem[];
+  sandwiches: MenuItem[];
+  salads: MenuItem[];
+  sides: MenuItem[];
+}> {
   const subsheets = ['plates', 'sandwiches', 'salads', 'sides', 'drinks'];
   const urls = subsheets.map(
     sheetName =>
@@ -48,20 +52,32 @@ export async function getMenu(sheetId: string): Promise<MenuItem[]> {
     )
   );
 
-  const allMenuItems: MenuItem[] = [];
+  const result: { [key: string]: MenuItem[] } = {
+    plates: [],
+    sandwiches: [],
+    salads: [],
+    sides: [],
+  };
+
   for (let i = 0; i < subsheets.length; i++) {
+    const sheet = subsheets[i];
+    if (!result.hasOwnProperty(sheet)) continue; // skip 'drinks'
     const csv = csvResults[i];
     if (!csv) continue;
     const records = parseCSVByIndex(csv);
     for (const row of records) {
-      allMenuItems.push({
+      result[sheet].push({
         name: row.name,
         description: row.description,
         price: parseFloat((row.price || '0').replace(/[^0-9.]/g, '')) || 0,
-        category: subsheets[i],
       });
     }
   }
 
-  return allMenuItems;
+  return {
+    plates: result.plates,
+    sandwiches: result.sandwiches,
+    salads: result.salads,
+    sides: result.sides,
+  };
 }
