@@ -4,7 +4,7 @@ import { URL } from 'url';
 export interface MenuItem {
   name: string;
   description: string;
-  price: number;
+  price: string;
 }
 
 function fetchCSV(url: string): Promise<string> {
@@ -69,7 +69,12 @@ export async function getMenu(sheetId: string): Promise<{
       result[sheet].push({
         name: row.name,
         description: row.description,
-        price: parseFloat((row.price || '0').replace(/[^0-9.]/g, '')) || 0,
+        price: Number.isNaN(parseFloat((row.price || '0').replace(/[^0-9.]/g, '')))
+          ? ''
+          : parseFloat((row.price || '0').replace(/[^0-9.]/g, '')).toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            }),
       });
     }
   }

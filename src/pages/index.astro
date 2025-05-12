@@ -7,8 +7,7 @@ import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
 import { getMenu } from "../utils/menu";
 
-const {plates, sandwiches, salads, sides} = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM')
-console.log(plates, sandwiches, salads, sides)
+const { plates, sandwiches, salads, sides } = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM');
 ---
 
 <Layout title="Schlop Stop">
@@ -32,99 +31,40 @@ console.log(plates, sandwiches, salads, sides)
   </p>
 
   <MenuSectionTitle title="Plates" />
-
-  <MenuItem
-    title="Falafel Plate"
-    description="Four (4) Falafel balls on Farm Salad, side of Mujadara, topped with Tahini"
-    price="$13"
-  />
-
-  <MenuItem
-    title="Farm Plate"
-    description="Goat Cheese Mashed Potatoes, Roasted Veggies, Grilled Chicken"
-    price="$15"
-  />
-
-  <MenuItem
-    title="Custom Plates"
-    descriptions={["Choose 2 sides + 1 salad", "Choose 3 sides + 1 salad"]}
-  />
-
-  <MenuItem
-    title="Special Plates"
-    description="Weekly special from the farm"
-    price="**"
-  />
+  {plates && plates.map((item) => (
+    <MenuItem
+      title={item.name}
+      description={item.description}
+      price={item.price}
+    />
+  ))}
 
   <MenuSectionTitle title="Sandwiches" />
-
-  <MenuItem
-    title="Falafel Wrap"
-    description="4 Falafel balls with lettuce, tomato, onion, and tahini in a pita wrap (make it spicy tahini)"
-    price="$10"
-  />
-
-  <MenuItem
-    title="Chicken Sandwich"
-    description="Grilled Chicken, garlic aioli, lettuce, tomato, pickled onion on brioche"
-    price="$12"
-  />
-
-  <MenuItem
-    title="Special Sandwich"
-    description="Weekly special from the farm"
-    price="$13"
-  />
+  {sandwiches && sandwiches.map((item) => (
+    <MenuItem
+      title={item.name}
+      description={item.description}
+      price={item.price}
+    />
+  ))}
 
   <MenuSectionTitle title="Salads" />
-
-  <MenuItem
-    title="Farm Salad"
-    description="Salad Mix, Seasonal veggies, choose of dressing"
-    price="$8"
-  />
-
-  <MenuItem
-    title="Garlic Crunch Salad"
-    description="Salad Mix, Seasonal veggies, granola, dried fruit, garlic olive oil, topped with goat cheese"
-    price="$10"
-  />
+  {salads && salads.map((item) => (
+    <MenuItem
+      title={item.name}
+      description={item.description}
+      price={item.price}
+    />
+  ))}
 
   <MenuSectionOptions />
 
   <MenuSectionTitle title="Sides" />
-
-  <MenuItem title="Farm Fries" description="French fries" price="$5" />
-
-  <MenuItem title="Fried Chicken Thighs" description="5 pieces" price="$8" />
-
-  <MenuItem
-    title="Goat Cheese Mashed Potatoes"
-    description="Mashed Potatoes mixed with goat cheese, butter, garlic, and leak"
-    price="$5"
-  />
-
-  <MenuItem
-    title="Roasted Veggies"
-    description="Roasted Seasonal Vegetables"
-    price="$4"
-  />
-
-  <MenuItem
-    title="Falafel Balls"
-    description="4 balls with a side of tahini"
-    price="$7"
-  />
-
-  <MenuItem
-    title="Hummus"
-    description="Small bowl of hummus served with pita"
-    price="$6"
-  />
-
-  <MenuItem
-    title="Special Sides"
-    description="Weekly specials from the farm"
-    price="**"
-  />
+  {sides && sides.map((item) => (
+    <MenuItem
+      title={item.name}
+      description={item.description}
+      price={item.price}
+    />
+  ))}
 </Layout>
