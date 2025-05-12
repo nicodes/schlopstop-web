@@ -86,3 +86,18 @@ export async function getMenu(sheetId: string): Promise<{
     sides: result.sides,
   };
 }
+
+let cachedReturn: any = null;
+let cacheTimestamp = 0;
+export async function withCache(foo: any, duration = 5 * 60 * 1000) {
+  const now = Date.now();
+  if (cachedReturn && now - cacheTimestamp < duration) {
+    return cachedReturn;
+  }
+
+  cachedReturn = foo()
+
+  // After fetching:
+  cacheTimestamp = now;
+  return cachedReturn;
+}

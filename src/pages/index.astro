@@ -5,9 +5,9 @@ import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.as
 import MenuSectionOptions from "../components/menuSectionOptions/MenuSectionOptions.astro";
 import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
-import { getMenu } from "../utils/menu";
+import { getMenu, withCache } from "../utils/menu";
 
-const { plates, sandwiches, salads, sides } = await getMenu('1sS4H8wVCvINnIjeW8hAldaTYAP9i-liUIpHyyCk3yJM');
+const { plates, sandwiches, salads, sides } = await withCache(() => getMenu(import.meta.env.MENU_SHEET_ID));
 ---
 
 <Layout title="Schlop Stop">
