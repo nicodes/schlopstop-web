@@ -7,6 +7,8 @@ import MenuItem from "../components/menuItem/MenuItem.astro";
 import styles from "./index.module.scss";
 import { getMenu, withCache } from "../utils/menu";
 
+export const prerender = false;
+
 // Add this type definition
 type MenuItemType = {
   name: string;
