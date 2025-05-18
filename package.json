@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
+    "@astrojs/tailwind": "^6.0.2",
     "@fontsource/cardo": "^5.0.8",
     "@fontsource/lato": "^5.0.18",
     "@fontsource/lobster": "^5.0.18",
@@ -18,6 +19,7 @@
     "astro": "^4.0.8",
     "sass": "^1.69.6",
     "sharp": "^0.33.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
