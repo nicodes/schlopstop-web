@@ -12,10 +12,10 @@
   --thin: 12px;
   --thick: 24px;
 
-  --font-size-lg: 2rem;
-  --font-size-md: 1.6rem;
-  --font-size-sm: 1.2rem;
-  --font-size-xs: 0.8rem;
+  --font-lg: 2rem;
+  --font-md: 1.6rem;
+  --font-sm: 1.2rem;
+  --font-xs: 0.8rem;
 }
 
 * {
@@ -23,37 +23,37 @@
   margin: 0;
   padding: 0;
   border: 0;
-  // box-sizing: border-box;
+  box-sizing: border-box;
 
   font-size: var(--font-size-sm);
   font-family: lato;
 }
 
-html,
-body {
-  height: 100%; // can't be 100vh because of mobile browser UI
-  background-color: var(--wheat);
-}
+// html,
+// body {
+//   height: 100%; // can't be 100vh because of mobile browser UI
+//   background-color: var(--wheat);
+// }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
+// body {
+//   display: flex;
+//   flex-direction: column;
+// }
 
-main {
-  flex: 1;
-  overflow: scroll;
-  padding: var(--thin);
-}
+// main {
+//   flex: 1;
+//   overflow: scroll;
+//   padding: var(--thin);
+// }
 
-// scroll container
-main > div {
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: var(--thick);
-}
+// // scroll container
+// main > div {
+//   max-width: var(--content-max-width);
+//   margin: 0 auto;
+//   display: flex;
+//   flex-direction: column;
+//   gap: var(--thick);
+// }
 
 // main > * {
 //   max-width: var(--content-max-width);

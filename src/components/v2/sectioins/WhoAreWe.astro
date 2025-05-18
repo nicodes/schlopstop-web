@@ -1,0 +1,37 @@
+---
+import Section from "../Section.astro";
+
+const mockImage =
+  "https://images.stockcake.com/public/3/4/5/345b1455-7163-4193-bc6d-783566c3f208_large/majestic-mountain-cow-stockcake.jpg";
+---
+
+<Section>
+    <h1 class="text-center text-5xl font-bold">Schlop Stop Food Truck</h1>
+    <div class="flex justify-center items-center gap-4">
+      <div class="text-center flex flex-col gap-4">
+        <p>WHO ARE WE?</p>
+        <p>
+          We are the Schlop Stop food truck. A Boulder based group of friends
+          delivering schlop to feed the people. We run our own farm, Sunburns
+          Farm where we grow our produce.
+        </p>
+        <p>
+          We also partner with other local organic growers to serve up hearty,
+          affordable meals made with ingredients you can feel good about—one
+          delicious plate of schlop at a time.
+        </p>
+      </div>
+      <img src={mockImage} alt="Placeholder Kitten" />
+    </div>
+    <div class="grid grid-cols-3 grid-rows-3 gap-4">
+      {
+        Array.from({ length: 9 }).map((_, i) => (
+          <img
+            src={mockImage}
+            alt={`Mock ${i + 1}`}
+            class="w-full aspect-square object-cover rounded"
+          />
+        ))
+      }
+    </div>
+</Section>
