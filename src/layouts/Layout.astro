@@ -6,6 +6,7 @@ import "@fontsource/lobster";
 
 import "../styles.scss";
 import WidthGuard from "../components/WidthGuard.astro";
+import Header from "../components/Header.astro";
 
 interface Props {
   title: string;
@@ -26,7 +27,7 @@ const { title, class: className } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <!-- <Header /> -->
+    <Header />
     <main>
       <WidthGuard class={className}>
         <slot />
