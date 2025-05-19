@@ -17,9 +17,7 @@ const { plates, sandwiches, salads, sides } = await withCache(() =>
 );
 ---
 
-<PageSection>
-  <h1 class="text-center text-5xl font-bold">Food Truck Menu</h1>
-
+<PageSection title="Food Truck Menu">
   <div class="grid grid-cols-2 gap-4">
     <MenuSection title="Plates" items={plates} />
     <MenuSection title="Sandwiches" items={sandwiches} />
