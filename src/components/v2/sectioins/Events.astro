@@ -1,0 +1,29 @@
+---
+import { withCache, getMenu } from "../../../utils/menu";
+import MenuItem from "../../menuItem/MenuItem.astro";
+import MenuSectionOptions from "../../menuSectionOptions/MenuSectionOptions.astro";
+import MenuSectionTitle from "../../menuSectionTitle/MenuSectionTitle.astro";
+import MenuSection from "../MenuSection/MenuSection.astro";
+import Section from "../Section.astro";
+
+type MenuItemType = {
+  name: string;
+  description?: string;
+  price?: string;
+};
+
+const mockImage =
+  "https://images.stockcake.com/public/3/4/5/345b1455-7163-4193-bc6d-783566c3f208_large/majestic-mountain-cow-stockcake.jpg";
+
+const { plates, sandwiches, salads, sides } = await withCache(() =>
+  getMenu(import.meta.env.MENU_SHEET_ID)
+);
+---
+
+<Section>
+  <h1 class="text-center text-5xl font-bold">Events</h1>
+
+  <p>TODO</p>
+
+  <button>See More</button>
+</Section>
