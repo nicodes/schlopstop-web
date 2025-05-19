@@ -1,77 +1,21 @@
 ---
+import Catering from "../components/sections/Catering.astro";
+import Events from "../components/sections/Events.astro";
+import FoodTruckMenu from "../components/sections/FoodTruckMenu.astro";
+import OurPartners from "../components/sections/OurPartners.astro";
+import WhoAreWe from "../components/sections/WhoAreWe.astro";
 import Layout from "../layouts/Layout.astro";
-import PageLogo from "../components/pageLogo/PageLogo.astro";
-import MenuSectionTitle from "../components/menuSectionTitle/MenuSectionTitle.astro";
-import MenuSectionOptions from "../components/menuSectionOptions/MenuSectionOptions.astro";
-import MenuItem from "../components/menuItem/MenuItem.astro";
-import styles from "./index.module.scss";
 import { getMenu, withCache } from "../utils/menu";
 
-// Add this type definition
-type MenuItemType = {
-  name: string;
-  description?: string;
-  price?: string;
-};
-
-const { plates, sandwiches, salads, sides } = await withCache(() => getMenu(import.meta.env.MENU_SHEET_ID));
+const { plates, sandwiches, salads, sides } = await withCache(() =>
+  getMenu(import.meta.env.MENU_SHEET_ID)
+);
 ---
 
-<Layout title="Schlop Stop">
-  <PageLogo />
-
-  <p class={styles.description}>
-    Building community through growing, preparing, and serving nourishment for
-    all.
-  </p>
-
-  <p
-    style={{
-      textAlign: "center ",
-      fontSize: "36px",
-      color: "#c24040",
-      marginTop: "24px",
-      fontWeight: "900",
-    }}
-  >
-    MENU
-  </p>
-
-  <MenuSectionTitle title="Plates" />
-  {plates && plates.map((item: MenuItemType) => (
-    <MenuItem
-      title={item.name}
-      description={item.description}
-      price={item.price}
-    />
-  ))}
-
-  <MenuSectionTitle title="Sandwiches" />
-  {sandwiches && sandwiches.map((item: MenuItemType) => (
-    <MenuItem
-      title={item.name}
-      description={item.description}
-      price={item.price}
-    />
-  ))}
-
-  <MenuSectionTitle title="Salads" />
-  {salads && salads.map((item: MenuItemType) => (
-    <MenuItem
-      title={item.name}
-      description={item.description}
-      price={item.price}
-    />
-  ))}
-
-  <MenuSectionOptions />
-
-  <MenuSectionTitle title="Sides" />
-  {sides && sides.map((item: MenuItemType) => (
-    <MenuItem
-      title={item.name}
-      description={item.description}
-      price={item.price}
-    />
-  ))}
+<Layout title="Schlop Stop" class="flex flex-col gap-20">
+    <WhoAreWe />
+    <FoodTruckMenu />
+    <Catering />
+    <OurPartners />
+    <Events />
 </Layout>

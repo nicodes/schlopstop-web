@@ -1,10 +1,6 @@
 ---
-import { withCache, getMenu } from "../../../utils/menu";
-import MenuItem from "../../menuItem/MenuItem.astro";
-import MenuSectionOptions from "../../menuSectionOptions/MenuSectionOptions.astro";
-import MenuSectionTitle from "../../menuSectionTitle/MenuSectionTitle.astro";
-import MenuSection from "../MenuSection/MenuSection.astro";
-import Section from "../Section.astro";
+import { withCache, getMenu } from "../../utils/menu";
+import PageSection from "../PageSection.astro";
 
 type MenuItemType = {
   name: string;
@@ -20,7 +16,7 @@ const { plates, sandwiches, salads, sides } = await withCache(() =>
 );
 ---
 
-<Section>
+<PageSection>
   <h1 class="text-center text-5xl font-bold">Our Partners</h1>
 
   <p class="text-center">We partner with local organic growers to serve up hearty, affordable meals made with ingredients you can feel good about—one delicious plate of schlop at a time.</p>
@@ -28,4 +24,4 @@ const { plates, sandwiches, salads, sides } = await withCache(() =>
   <img src={mockImage} />
   <img src={mockImage} />
   <img src={mockImage} />
-</Section>
+</PageSection>
