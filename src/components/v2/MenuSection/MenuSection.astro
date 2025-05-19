@@ -1,0 +1,35 @@
+---
+import MenuSectionTitle from "../../menuSectionTitle/MenuSectionTitle.astro";
+import type { MenuItem } from "../../../utils/menu";
+
+interface Props {
+  title: string;
+  items: MenuItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div>
+  <!-- tailwind border not working? -->
+  <h3 class="w-full text-3xl" style="border-bottom: 2px solid var(--red)">
+    {title}
+  </h3>
+
+  {
+    items?.map((item: MenuItem) => (
+      <div class="mt-4">
+        <div class="flex justify-between items-center">
+          <span class="font-bold">{item.name}</span>
+          {item.price && (
+            <span>{item.price}</span>
+          )}
+        </div>
+        {item.description && (
+          <p class="mt-1">{item.description}</p>
+        )}
+        {/* TODO add ons */}
+      </div>
+    ))
+  }
+</div>

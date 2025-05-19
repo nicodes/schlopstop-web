@@ -1,0 +1,38 @@
+---
+import { withCache, getMenu } from "../../../utils/menu";
+import MenuItem from "../../menuItem/MenuItem.astro";
+import MenuSectionOptions from "../../menuSectionOptions/MenuSectionOptions.astro";
+import MenuSectionTitle from "../../menuSectionTitle/MenuSectionTitle.astro";
+import MenuSection from "../MenuSection/MenuSection.astro";
+import Section from "../Section.astro";
+
+type MenuItemType = {
+  name: string;
+  description?: string;
+  price?: string;
+};
+
+const mockImage =
+  "https://images.stockcake.com/public/3/4/5/345b1455-7163-4193-bc6d-783566c3f208_large/majestic-mountain-cow-stockcake.jpg";
+
+const { plates, sandwiches, salads, sides } = await withCache(() =>
+  getMenu(import.meta.env.MENU_SHEET_ID)
+);
+---
+
+<Section>
+  <h1 class="text-center text-5xl font-bold">Catering</h1>
+
+  <p class="text-center">We offer farm to table catering directly from our farm to your plate. We are both the farmers and cooks of all our food we provide, seeing the process of a brilliant meal from the very start to finish. We source meat, eggs, and dairy from neighboring farms in our area to maintain the level of food quality and integrity that everyone deserves.</p>
+
+  <div class="flex justify-evenly gap-4">
+    <MenuSection title="Plates" items={plates} />
+    <MenuSection title="Sandwiches" items={sandwiches} />
+  </div>
+
+  <p>Custom menu requests are available. We love making any and all types of food.</p>
+
+  <p>Ask for our sourcing list to see which farms, along with ours, will be providing the food for your meal.</p>
+
+  <button>Inquire Now</button>
+</Section>

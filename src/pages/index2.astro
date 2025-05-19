@@ -1,5 +1,7 @@
 ---
 import ContentArea from "../components/v2/ContentArea.astro";
+import Catering from "../components/v2/sectioins/Catering.astro";
+import FoodTruckMenu from "../components/v2/sectioins/FoodTruckMenu.astro";
 import WhoAreWe from "../components/v2/sectioins/WhoAreWe.astro";
 import WidthGuard from "../components/v2/WidthGuard.astro";
 import Layout from "../layouts/Layout.astro";
@@ -12,6 +14,6 @@ const { plates, sandwiches, salads, sides } = await withCache(() =>
 
 <Layout title="Schlop Stop" class="flex flex-col gap-20">
     <WhoAreWe />
-    <WhoAreWe />
-    <WhoAreWe />
+    <FoodTruckMenu />
+    <Catering />
 </Layout>
