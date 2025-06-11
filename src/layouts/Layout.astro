@@ -4,9 +4,15 @@ import "@fontsource/montserrat";
 import "@fontsource/cardo";
 import "@fontsource/lobster";
 
+import { Image } from "astro:assets";
+
 import "../styles.scss";
 import WidthGuard from "../components/WidthGuard.astro";
 import Header from "../components/Header.astro";
+
+import schlopStopLogo from "../assets/schlop-stop.png";
+import sunburnsFarmLogo from "../assets/sunburns-farm.png";
+import menuIcon from "../assets/menu.png";
 
 interface Props {
   title: string;
@@ -14,6 +20,9 @@ interface Props {
 }
 
 const { title, class: className } = Astro.props;
+const mockImage =
+  "https://images.stockcake.com/public/3/4/5/345b1455-7163-4193-bc6d-783566c3f208_large/majestic-mountain-cow-stockcake.jpg";
+
 ---
 
 <!doctype html>
@@ -26,12 +35,192 @@ const { title, class: className } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <Header />
+  <body class="bg-[#f5ebd8]">
+    <!-- Header -->
+    <header class="header flex items-center justify-between p-5">
+      <Image 
+        src={schlopStopLogo}
+        alt="Schlop Stop Logo"
+        class="h-[60px] w-auto"
+      />
+      <Image 
+        src={menuIcon}
+        alt="Schlop Stop Menu"
+        class="h-[35px] w-auto"
+      />
+    </header>
+    <!-- Hero -->
+    <div class="background-img h-[430px] flex flex-col gap-10 text-center bg-gray-700 text-white justify-center">
+      <span class="text-4xl">Fresh from the farm, <br/> right to your plate.</span>
+      <span class="font-bold">BOULDER, CO</span>
+    </div>
+    <div class="bg-red-700 text-white text-4xl p-10 text-center mb-20">Schlop Stop <br/>Food Truck</div>
+    <!-- Intro -->
+    <div class="items-center text-center flex flex-col gap-10 p-5 mb-20">
+      <p class="text-3xl font-bold uppercase">Who are we?</p>
+      <p>
+        We are the Schlop Stop food truck. A Boulder based group of friends
+        delivering schlop to feed the people. We run our own farm, Sunburns Farm
+        where we grow our produce.
+      </p>
+      <p>
+        We also partner with other local organic growers to serve up hearty,
+        affordable meals made with ingredients you can feel good about—one
+        delicious plate of schlop at a time.
+      </p>
+      <Image src={sunburnsFarmLogo} alt="Sunburns Farm" />
+    </div>
+    <!-- Images -->
+    <div class="grid grid-rows-5 gap-5 p-5">
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <!-- Schlop Definition -->
+      <div class="bg-red-700 text-white p-5 text-center mb-20">
+        <p class="text-2xl font-bold">schlop (noun):</p>
+        <p>A hearty, no-frills meal piled high with bold flavors and local ingredients. Often messy, always satisfying.</p>
+      </div>
+    </div>
+    <!-- Food Truck Menu -->
+    <div class="p-5 gap-10 flex flex-col mb-20">
+      <p class="text-center text-3xl font-bold uppercase">Food Truck Menu</p>
+      <!-- Breakfast -->
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold text-red-700">Breakfast</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <p class="font-bold text-xl">Schlop Omlette</p>
+            <p>$12</p>
+          </div>
+          <p>Two (2) egg omelette with goat cheese, peppers, onions and has browns on the side</p>
+          <p class="text-center">Add bacon + $2</p>
+        </div>
+      </div>
+      <!-- Sandwiches -->
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold text-red-700">Sandwiches</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <p class="font-bold text-xl">Falafel Wrap</p>
+            <p>$12</p>
+          </div>
+          <p>Four (4) falafel balls with lettuce, tomato, pickled onion, and tahini in a pita wrap (make it spicy)</p>
+          <p class="text-center">Add side of hummus & pita + $4</p>
+        </div>
+      </div>
+      <!-- Plates -->
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold text-red-700">Plates</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <p class="font-bold text-xl">Falafel Plate</p>
+            <p>$13</p>
+          </div>
+          <p>Four (4) falafel balls on salad topped with tahini, a side of humus and pita</p>
+        </div>
+      </div>
+      <!-- Sides -->
+      <div class="flex flex-col gap-4 mb-10">
+        <p class="text-2xl font-bold text-red-700">Sides</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <p class="font-bold text-xl">Hummus with Pita</p>
+            <p>$6</p>
+          </div>
+        </div>
+      </div>
+      <!-- Quotes -->
+      <div class="text-red-700 text-2xl font-bold gap-5 grid italic">
+        <p class="text-center">"Best burger I’ve had in a long time." - Jojo</p>
+        <p class="text-center">"The breakfast sandwich is top notch." - Nico</p>
+      </div>
+    </div>
+    <!-- Catering -->
+    <div class="p-5 gap-10 flex flex-col">
+      <img class="w-full h-[390px] object-cover"src={mockImage} alt="Placeholder Kitten" />
+      <p class="text-center text-3xl font-bold uppercase">Catering</p>
+      <p>We offer farm to table catering directly from our farm to your plate. We are both the farmers and cooks of all our food we provide, seeing the process of a brilliant meal from the very start to finish. We source meat, eggs, and dairy from neighboring farms in our area to maintain the level of food quality and integrity that everyone deserves.</p>
+      <!-- Catering Mains -->
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold text-red-700">Mains</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Hummus with Pita</p>
+          <p>Mix of greens and herbs, topped with thin sliced seasonal veggies, side of dijon salad dressing</p>
+        </div>
+      </div>
+      <!-- Catering Sides -->
+      <div class="flex flex-col gap-4">
+        <p class="text-2xl font-bold text-red-700">Sides</p>
+        <!-- Item -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-xl">Farm Salad</p>
+          <p>Mix of greens and herbs, topped with thin sliced seasonal veggies, side of dijon salad dressing</p>
+        </div>
+      </div>
+      <!-- Catering CTA -->
+      <div class="gap-10 grid mb-20">
+        <p class="text-center">Custom menu requests are available. We love making any and all types of food.</p>
+        <p class="text-center">Ask for our sourcing list to see which farms, along with ours, will be providing the food for your meal.</p>
+        <button class="bg-red-700 text-white p-2 text-center">Inquire Now</button>
+      </div>
+    </div>
+    <!-- Partners -->
+    <div class="p-5 gap-10 flex flex-col mb-20">
+      <p class="text-center text-3xl font-bold uppercase">Our Partners</p>
+      <p class="text-center">We partner with local organic growers to serve up hearty, affordable meals made with ingredients you can feel good about—one delicious plate of schlop at a time.</p>
+      <img src={mockImage} />
+      <img src={mockImage} />
+      <img src={mockImage} />
+    </div>
+    <!-- Events -->
+    <div class="p-5 gap-10 flex flex-col mb-20">
+      <p class="text-center text-3xl font-bold uppercase">Events</p>
+      <!-- Single Event -->
+      <div class="bg-white p-5 flex flex-col-3 gap-5">
+        <div class="bg-red-700 h-auto w-2"></div>
+        <div>
+          <p>Sunday</p>
+          <p class="text-xl font-bold">May 17</p>
+        </div>
+        <div>
+          <p class="text-xl font-bold">Longmont Farmer's Market</p>
+          <p>8am - 1pm</p>
+        </div>
+      </div>
+    </div>
+    <!-- Image -->
+    <div class="background-img h-[430px] flex flex-col gap-10 text-center bg-gray-700 text-white justify-center">
+    </div>
+    <!-- Contact -->
+    <div class="bg-[#232323] text-white p-10 text-center flex flex-col gap-5">
+      <p class="text-3xl font-bold uppercase">Contact</p>
+      <p class="text-xl font-bold">Subscribe to our newsletter!</p>
+      <p>Sign up with your email address to receive news and updates! All emails are handled personally, as we respect your privacy.</p>
+      <input type="email" placeholder="Enter your email" class="p-2"/>
+      <button class="bg-red-700 text-white p-2 text-center">Sign Up</button>
+    </div>
+    <!-- Footer -->
+    <div class="flex flex-col items-center gap-5 p-10 bg-red-700 text-white">
+      <Image 
+      src={schlopStopLogo}
+      alt="Schlop Stop Logo"
+      class="h-[60px] w-auto"
+    />
+    <div>Socials</div>
+    <p> (C) 2025 Schlop Stop</p>
+    </div>
+    <!-- <Header />
     <main>
       <WidthGuard class={className}>
         <slot />
       </WidthGuard>
-    </main>
+    </main> -->
   </body>
 </html>
