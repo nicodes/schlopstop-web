@@ -1,0 +1,20 @@
+[tools]
+node = "26.13.0"
+pnpm = "9.15.9"
+
+[env]
+MISE_AUTO_INSTALL = "false"
+MISE_EXEC_AUTO_INSTALL = "false"
+MISE_TASK_RUN_AUTO_INSTALL = "false"
+
+[tasks.setup]
+description = "Install the locked frontend dependencies"
+run = "pnpm install --frozen-lockfile"
+
+[tasks.test]
+description = "Verify actual framework process-only environment loading"
+run = "pnpm run test"
+
+[tasks.build]
+description = "Build the frontend with its native checks"
+run = "pnpm run build"

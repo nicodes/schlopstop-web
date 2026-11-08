@@ -1,0 +1,48 @@
+name: Build & Test
+on:
+  pull_request:
+  push:
+    branches: [main]
+  merge_group:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: frontend-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  frontend:
+    name: Frontend build and environment tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Prepare pinned SDKs
+        uses: nicodes/tools/setup@a88380ae0f434b1dd318293db3d0828a6facc66b
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MISE_GITHUB_TOKEN: ${{ github.token }}
+        timeout-minutes: 5
+      - name: Report exact SDK versions
+        run: |
+          mise exec -- node --version
+          mise exec -- pnpm --version
+      - name: Install locked dependencies
+        run: mise run setup
+        timeout-minutes: 5
+      - name: Test actual framework environment loading
+        run: mise run test
+        timeout-minutes: 2
+      - name: Build frontend
+        run: mise run build
+        timeout-minutes: 5
+      - name: Preserve built frontend
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: frontend-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
